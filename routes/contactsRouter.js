@@ -18,6 +18,6 @@ contactsRouter.delete("/:id", deleteContact);
 contactsRouter.post("/", createContact);
 
 contactsRouter.put("/:id", updateContact);
-contactsRouter.put("/:id/favorite", updateContact);
+contactsRouter.patch("/:id/favorite", updateContact);
 
 export default contactsRouter;

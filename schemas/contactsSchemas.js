@@ -4,6 +4,7 @@ export const createContactSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().required(),
   phone: Joi.number().required(),
+  favorite: Joi.boolean().optional(),
 })
   .or("name", "email", "phone")
   .messages({
@@ -13,8 +14,9 @@ export const updateContactSchema = Joi.object({
   name: Joi.string().optional(),
   email: Joi.string().email().optional(),
   phone: Joi.number().optional(),
+  favorite: Joi.boolean().optional(),
 })
-  .or("name", "email", "phone")
+  .or("name", "email", "phone", "favorite")
   .messages({
     "object.missing": "Body must have at least one field",
   });

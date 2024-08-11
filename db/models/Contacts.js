@@ -17,6 +17,7 @@ const User = sequelize.define("Contact", {
   favorite: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
+    allowNull: false,
   },
 });
 // User.sync();
